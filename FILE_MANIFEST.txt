@@ -1,0 +1,12 @@
+RacharlaGPT Trend — production package
+18 HTML pages
+Shared neon CSS
+GA4 G-1JDHHG4C29
+AdSense ca-pub-1188239058737040
+ads.txt + CNAME + robots.txt + sitemap.xml
+Real AI OAuth/PKCE client (requires publishable Pollinations pk_ key)
+Browser-only free AI courtesy counter (3 attempts / 24h, no sign-in)
+Creator Hub: caption/hashtag maker + trend idea mixer
+Image Lab: resize/compress/convert
+Student tools + PDF tools
+About / Contact / Privacy / Terms / Disclaimer
