@@ -1,11 +1,462 @@
-<!doctype html><html lang="en"><head>
-<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-1JDHHG4C29"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-1JDHHG4C29');</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188239058737040" crossorigin="anonymous"></script>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#040615"><title>RacharlaGPT Trend AI Photo Studio — Social Trend Generator</title><meta name="description" content="Upload a photo and create new 90s, Y2K, cinematic, neon and social-media trend scenes with AI, plus instant local effects."><link rel="canonical" href="https://trend.racharlagpt.in/retro-photo.html"><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/styles.css"><script src="/trend-credits.js"></script></head>
-<body><header class="site-header"><div class="container nav"><a class="brand" href="/"><span>Racharla</span>GPT <span>Trend</span></a><nav><a href="/">Home</a><a href="/retro-photo.html">📸 AI Photo Studio</a><a href="/trending-photo-effects.html">🔥 Trending</a><a href="/y2k-photo-editor.html">💿 Y2K</a><a href="/vintage-photo-editor.html">📼 Vintage</a><a href="/cinematic-photo-editor.html">🎬 Cinematic</a><a href="/creator-tools.html">✨ Creator</a><a href="/student-tools.html">🎓 Student</a><a href="/image-tools.html">🖼️ Image</a><a href="https://RacharlaGPT.in" target="_blank" rel="noopener">RacharlaGPT ↗</a></nav></div></header>
-<main class="tool-page"><p class="eyebrow">✨ RACHARLAGPT TREND • AI SOCIAL PHOTO STUDIO</p><h1>Don't just filter your photo. <mark>Create a new trend scene.</mark></h1><p class="lead">Upload a reference photo, choose a trend, and let local AI understand the scene before creating a new social-media trend image inspired by its visual cues.</p>
-<section class="ai-studio toolbox"><div class="ai-head"><div><span class="badge">REAL AI • RUNS ON YOUR DEVICE</span><h2>AI Trend Generator</h2><p class="microcopy">This version does not use Pollinations or an API key. A browser-compatible Stable Diffusion model runs locally with WebGPU. Your uploaded photo stays in your browser, but the generated image is an AI-created scene rather than a simple color filter.</p></div></div><div id="localAiStatus" class="ai-status">Checking your browser for WebGPU…</div><div id="localAiSupport" class="credit-fineprint">Checking WebGPU support…</div><div class="credit-panel" aria-live="polite"><div class="credit-top"><strong>🎁 FREE AI ACCESS</strong><span data-free-credits>3 / 3 free AI attempts remaining</span></div><div class="credit-meter"><span id="creditBar"></span></div><p id="creditNote" class="microcopy">No sign-in • Browser allowance resets after 24 hours.</p><p class="credit-fineprint">This is a courtesy browser limit. The AI model itself runs on the visitor's device; users can bypass client-side limits by clearing browser storage.</p></div><div class="ai-grid"><div><label class="upload-box ai-upload"><span class="upload-icon">📸</span><b>Upload a reference photo</b><small>JPG • PNG • WEBP • processed locally in your browser</small><input id="aiPhoto" class="file" type="file" accept="image/jpeg,image/png,image/webp"></label><img id="aiSourcePreview" class="ai-source" hidden alt="Uploaded source preview"></div><div class="ai-controls"><label class="field">Trend style<select id="aiStyle"><option value="90s">📼 90s Street / College</option><option value="y2k">💿 Y2K Gloss / Arcade</option><option value="disposable">📷 Disposable Party Flash</option><option value="kodak">🎞️ Kodak Nostalgia</option><option value="polaroid">🖼️ Polaroid Lifestyle</option><option value="vhs">📺 VHS Music Video</option><option value="cinematic">🎬 Cinematic Movie Scene</option><option value="neon">🌃 Neon Night City</option><option value="bollywood">🎞️ Retro Indian Cinema</option><option value="street">👟 Modern Street Style</option><option value="soft">🌸 Dreamy Soft Editorial</option><option value="editorial">📰 Fashion Editorial</option></select></label><label class="field">Your creative direction <textarea id="aiPrompt" rows="5" placeholder="Example: sunset rooftop, denim jacket, candid smile, warm street lights"></textarea></label><button class="btn yellow ai-generate" id="generateLocalAiBtn" type="button">🧠 Generate Local AI Trend Photo</button><p class="microcopy">First use may download a large AI model into browser cache. A compatible WebGPU GPU is recommended. This is genuine local AI generation, not a CSS filter.</p></div></div><div class="ai-output-wrap"><img id="aiOutput" hidden alt="AI-generated trend photo"><button class="btn primary" id="aiDownload" hidden type="button">⬇ Download AI Photo</button></div></section>
-<section class="section"><div class="section-heading"><p class="eyebrow">⚡ INSTANT MODE</p><h2>Fast browser effects — no AI required</h2><p>Use this when you want instant local processing. It changes composition, grading, grain, glow, frames and social layout, but it is clearly labeled as an effects engine rather than AI.</p><a class="btn secondary" href="#instant">Open Instant Effects ↓</a></div></section>
-<section id="instant" class="toolbox photo-studio"><h2>16 Instant Styles</h2><div class="style-grid"><button class="style-chip" type="button"><b>📼 90s Camera</b><small>Flash + grain + date</small></button><button class="style-chip" type="button"><b>💿 Y2K Digital</b><small>Gloss + cyber color</small></button><button class="style-chip" type="button"><b>📷 Disposable</b><small>Party flash</small></button><button class="style-chip" type="button"><b>🎞️ Kodak Film</b><small>Warm analog</small></button><button class="style-chip" type="button"><b>🌿 Fuji Film</b><small>Fresh film</small></button><button class="style-chip" type="button"><b>🖼️ Polaroid</b><small>Instant frame</small></button><button class="style-chip" type="button"><b>📺 VHS</b><small>Scan lines</small></button><button class="style-chip" type="button"><b>🖤 B&W</b><small>Classic mono</small></button><button class="style-chip" type="button"><b>🎬 Cinematic</b><small>Movie crop</small></button><button class="style-chip" type="button"><b>🌃 Neon Night</b><small>Electric glow</small></button><button class="style-chip" type="button"><b>☁️ Soft Dream</b><small>Pastel haze</small></button><button class="style-chip" type="button"><b>📰 Editorial</b><small>Fashion matte</small></button><button class="style-chip" type="button"><b>🌅 Golden Sunset</b><small>Warm light</small></button><button class="style-chip" type="button"><b>🎞️ Old Film</b><small>Dust + fade</small></button><button class="style-chip" type="button"><b>⚡ Retro Flash</b><small>Direct flash</small></button><button class="style-chip" type="button"><b>🍧 Pastel Pop</b><small>Color pop</small></button></div></section>
-<section class="content"><h2>What makes the AI mode different?</h2><div class="grid"><article class="card"><h3>🌆 New background</h3><p>A local vision model first describes the reference, then the diffusion model creates a new environment instead of simply recoloring the source.</p></article><article class="card"><h3>👗 New styling</h3><p>Prompts combine the reference description with era-appropriate styling, lighting and composition for the selected trend.</p></article><article class="card"><h3>📱 Social-ready</h3><p>Prompts are designed for portrait social photography rather than generic image filters.</p></article><article class="card"><h3>🔒 User control</h3><p>No provider account or secret API key is required. The AI models run locally in a compatible browser.</p></article></div></section></main>
-<footer class="site-footer"><div class="container footer-grid"><div><strong class="neon-title">RacharlaGPT Trend</strong><p>Creative tools + AI trend studio.</p></div><div><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div></div><div class="container footer-bottom">© 2026 RacharlaGPT · <a href="https://RacharlaGPT.in">RacharlaGPT.in</a></div></footer><script src="/trend-local-ai.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Avatar Trend Studio — Free AI Avatar from Photo | RacharlaGPT Trend</title>
+  <meta name="description" content="Create a trendy AI avatar from your photo. Explore Y2K, cinematic, anime, cyberpunk, 3D and social profile avatar styles with RacharlaGPT Trend.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://trend.racharlagpt.in/retro-photo.html">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JDHHG4C29"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1JDHHG4C29');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188239058737040"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .avatar-hero {
+      text-align:center;
+      padding:34px 18px 18px;
+    }
+
+    .avatar-badge {
+      display:inline-block;
+      padding:8px 16px;
+      border:1px solid rgba(0,255,255,.55);
+      border-radius:999px;
+      color:#00ffff;
+      box-shadow:0 0 18px rgba(0,255,255,.25);
+      font-weight:800;
+      letter-spacing:.08em;
+      margin-bottom:14px;
+    }
+
+    .avatar-title {
+      font-size:clamp(2rem,6vw,4.4rem);
+      line-height:1;
+      margin:8px 0 14px;
+      font-weight:950;
+      background:linear-gradient(90deg,#00ffff,#ff38d1,#ffe600,#00ffff);
+      background-size:300% 100%;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      animation:avatarGradient 7s linear infinite;
+      text-shadow:0 0 30px rgba(0,255,255,.18);
+    }
+
+    @keyframes avatarGradient {
+      0%{background-position:0% 50%}
+      100%{background-position:300% 50%}
+    }
+
+    .avatar-subtitle {
+      max-width:760px;
+      margin:0 auto;
+      color:#d8eaff;
+      font-size:1.05rem;
+      line-height:1.7;
+    }
+
+    .avatar-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin:26px 0;
+    }
+
+    .avatar-card {
+      position:relative;
+      padding:24px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:22px;
+      background:
+        linear-gradient(145deg,rgba(0,255,255,.08),rgba(255,0,180,.08)),
+        rgba(10,14,30,.86);
+      box-shadow:
+        0 0 24px rgba(0,255,255,.08),
+        inset 0 0 20px rgba(255,0,200,.04);
+      transition:.28s ease;
+      overflow:hidden;
+    }
+
+    .avatar-card:hover {
+      transform:translateY(-7px);
+      border-color:rgba(0,255,255,.6);
+      box-shadow:
+        0 0 35px rgba(0,255,255,.2),
+        0 0 55px rgba(255,0,190,.1);
+    }
+
+    .avatar-icon {
+      font-size:2.5rem;
+      margin-bottom:12px;
+    }
+
+    .avatar-card h3 {
+      margin:0 0 8px;
+      color:#fff;
+    }
+
+    .avatar-card p {
+      color:#c9d5e9;
+      line-height:1.55;
+      margin:0 0 18px;
+    }
+
+    .avatar-style {
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      justify-content:center;
+      margin:22px 0;
+    }
+
+    .avatar-style span {
+      padding:9px 13px;
+      border-radius:999px;
+      background:linear-gradient(90deg,rgba(0,255,255,.12),rgba(255,0,190,.12));
+      border:1px solid rgba(255,255,255,.15);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .avatar-steps {
+      counter-reset:step;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:16px;
+      margin:24px 0;
+    }
+
+    .avatar-step {
+      padding:20px;
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .avatar-step strong {
+      display:block;
+      color:#00ffff;
+      font-size:1.1rem;
+      margin-bottom:7px;
+    }
+
+    .avatar-note {
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,220,0,.06);
+      border:1px solid rgba(255,220,0,.25);
+      color:#f4edc2;
+      line-height:1.6;
+      margin-top:24px;
+    }
+
+    .avatar-privacy {
+      color:#aab8cc;
+      font-size:.9rem;
+      line-height:1.55;
+      margin-top:14px;
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .avatar-title { animation:none; }
+      .avatar-card { transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="RacharlaGPT Trend home">
+      <span>RacharlaGPT</span> <b>TREND</b>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="retro-photo.html">Avatar Studio</a>
+      <a href="image-tools.html">Image Tools</a>
+      <a href="creator-tools.html">Creator Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="avatar-hero">
+    <div class="avatar-badge">✨ AI AVATAR TREND STUDIO</div>
+
+    <h1 class="avatar-title">
+      Turn Your Photo Into a Trendy AI Avatar
+    </h1>
+
+    <p class="avatar-subtitle">
+      Keep your recognizable face while exploring futuristic, cinematic,
+      anime, 3D, cyberpunk, creator and social-profile avatar styles.
+    </p>
+
+    <div class="avatar-style" aria-label="Avatar styles">
+      <span>3D</span>
+      <span>Anime</span>
+      <span>Cyberpunk</span>
+      <span>Fantasy</span>
+      <span>Creator</span>
+      <span>Gaming</span>
+      <span>Professional</span>
+      <span>Social Profile</span>
+    </div>
+  </section>
+
+
+  <section class="tool-panel">
+
+    <div class="section-heading">
+      <span class="eyebrow">FREE AI OPTION</span>
+      <h2>Make Your AI Avatar</h2>
+      <p>
+        Use a free external AI avatar creator that supports a reference photo.
+        Your photo is sent directly to that service when you choose to use it.
+      </p>
+    </div>
+
+    <div class="avatar-grid">
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🧑‍🎨</div>
+
+        <h3>AI Avatar from Photo</h3>
+
+        <p>
+          Upload a clear portrait and create a stylized avatar while keeping
+          important facial characteristics recognizable.
+        </p>
+
+        <a
+          class="btn btn-primary"
+          href="https://free.ai/avatar/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga-event="avatar_external_open">
+          ✨ CREATE MY AI AVATAR
+        </a>
+
+        <div class="avatar-privacy">
+          This opens the external AI service in a new tab. RacharlaGPT Trend
+          does not upload your photo to its own server through this button.
+        </div>
+      </article>
+
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🧑‍💼</div>
+
+        <h3>Professional Avatar</h3>
+
+        <p>
+          For profile photos, creator pages, portfolios, speaker profiles and
+          professional social accounts.
+        </p>
+
+        <a
+          class="btn btn-secondary"
+          href="https://free.ai/headshot/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga-event="headshot_external_open">
+          🚀 TRY AI HEADSHOT
+        </a>
+      </article>
+
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🎮</div>
+
+        <h3>3D Avatar</h3>
+
+        <p>
+          Create a customizable 3D-style character from a selfie for gaming,
+          VR, creator profiles and digital projects.
+        </p>
+
+        <a
+          class="btn btn-secondary"
+          href="https://avatarsdk.com/avatar-maker/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga-event="3d_avatar_external_open">
+          🎮 TRY 3D AVATAR
+        </a>
+      </article>
+
+    </div>
+
+    <div class="avatar-note">
+      <strong>Important:</strong>
+      AI services can change their free limits, models or availability.
+      RacharlaGPT Trend does not promise unlimited generation from an
+      external provider.
+    </div>
+
+  </section>
+
+
+  <section class="section-block">
+
+    <div class="section-heading">
+      <span class="eyebrow">HOW IT WORKS</span>
+      <h2>Create Your Trend Avatar</h2>
+    </div>
+
+    <div class="avatar-steps">
+
+      <div class="avatar-step">
+        <strong>01 · Choose a clear photo</strong>
+        Use a well-lit portrait where your face is easy to see.
+      </div>
+
+      <div class="avatar-step">
+        <strong>02 · Choose your style</strong>
+        Try 3D, anime, cyberpunk, cinematic, creator, gaming or professional.
+      </div>
+
+      <div class="avatar-step">
+        <strong>03 · Generate</strong>
+        The selected external AI service processes the reference photo.
+      </div>
+
+      <div class="avatar-step">
+        <strong>04 · Download & share</strong>
+        Save the result and use it for your profile or social content.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section-block">
+
+    <div class="section-heading">
+      <span class="eyebrow">TREND IDEAS</span>
+      <h2>Try These Avatar Looks</h2>
+    </div>
+
+    <div class="avatar-grid">
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🌌</div>
+        <h3>Cyber Neon</h3>
+        <p>
+          Futuristic city lights, glowing edges, neon colors and a premium
+          digital identity.
+        </p>
+      </article>
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🎬</div>
+        <h3>Cinematic</h3>
+        <p>
+          Dramatic lighting, film-style composition and a polished character
+          portrait.
+        </p>
+      </article>
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🎨</div>
+        <h3>Anime</h3>
+        <p>
+          Stylized illustrated avatar suitable for profile pictures and social
+          accounts.
+        </p>
+      </article>
+
+      <article class="avatar-card">
+        <div class="avatar-icon">🕹️</div>
+        <h3>Gaming</h3>
+        <p>
+          Futuristic gaming character styling for Discord, gaming profiles and
+          creator pages.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="section-block">
+    <h2>More Free RacharlaGPT Trend Tools</h2>
+
+    <div class="avatar-grid">
+
+      <a class="avatar-card" href="image-tools.html">
+        <div class="avatar-icon">🖼️</div>
+        <h3>Image Tools</h3>
+        <p>Resize, compress and convert your images.</p>
+      </a>
+
+      <a class="avatar-card" href="creator-tools.html">
+        <div class="avatar-icon">✍️</div>
+        <h3>Creator Tools</h3>
+        <p>Create captions, hashtags and social content ideas.</p>
+      </a>
+
+      <a class="avatar-card" href="student-tools.html">
+        <div class="avatar-icon">🎓</div>
+        <h3>Student Tools</h3>
+        <p>Explore free learning and productivity utilities.</p>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      © 2026 RacharlaGPT Trend · ManaTechSaavy · Telangana, India
+    </p>
+
+    <p>
+      <a href="about.html">About</a> ·
+      <a href="contact.html">Contact</a> ·
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="disclaimer.html">Disclaimer</a>
+    </p>
+  </div>
+</footer>
+
+
+<script>
+  document.querySelectorAll('[data-ga-event]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', el.dataset.gaEvent, {
+          event_category: 'avatar_studio',
+          event_label: el.textContent.trim()
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
