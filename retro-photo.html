@@ -1638,7 +1638,69 @@
 
     }
 
-  </style>
+
+    /* PROFESSIONAL CROP EDITOR */
+    .crop-editor{
+      margin-top:20px;padding:18px;border:1px solid rgba(0,245,255,.18);
+      border-radius:24px;background:linear-gradient(145deg,rgba(0,245,255,.055),rgba(255,53,209,.035),rgba(255,230,0,.025));
+      box-shadow:0 0 35px rgba(0,245,255,.06),inset 0 0 30px rgba(255,53,209,.025);
+    }
+    .crop-editor.hidden{display:none}
+    .crop-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:13px}
+    .crop-head h3{margin:0;font-size:1.08rem}
+    .crop-badge{padding:6px 10px;border-radius:999px;font-size:.68rem;font-weight:900;letter-spacing:.06em;color:#071019;background:linear-gradient(90deg,var(--cyan),#a7fff8);box-shadow:0 0 18px rgba(0,245,255,.2)}
+    .crop-help{margin:0 0 14px;color:#b8c5e6;font-size:.82rem}
+    .crop-stage{
+      position:relative;display:flex;align-items:center;justify-content:center;min-height:300px;
+      padding:18px;overflow:hidden;border-radius:20px;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(0,245,255,.11),transparent 30%),
+        radial-gradient(circle at 80% 75%,rgba(255,53,209,.11),transparent 32%),
+        #070a20;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:inset 0 0 40px rgba(0,0,0,.35);
+    }
+    #cropCanvas{display:block;max-width:100%;max-height:560px;width:auto;height:auto;border-radius:12px;touch-action:none;cursor:grab;box-shadow:0 0 28px rgba(0,245,255,.13),0 12px 35px rgba(0,0,0,.45)}
+    #cropCanvas.dragging{cursor:grabbing}
+    .crop-frame{
+      position:absolute;pointer-events:none;border:2px solid rgba(255,255,255,.7);
+      box-shadow:0 0 0 9999px rgba(0,0,0,.22),0 0 18px rgba(0,245,255,.45);
+      border-radius:10px;
+    }
+    .crop-frame::before,.crop-frame::after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.18);border-radius:6px}
+    .crop-grid{position:absolute;inset:33.333% 0;border-top:1px dashed rgba(255,255,255,.22);border-bottom:1px dashed rgba(255,255,255,.22)}
+    .crop-vgrid{position:absolute;inset:0 33.333%;border-left:1px dashed rgba(255,255,255,.22);border-right:1px dashed rgba(255,255,255,.22)}
+    .crop-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin-top:13px}
+    .crop-slider{padding:13px 15px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.025)}
+    .crop-slider label{display:flex;justify-content:space-between;gap:10px;font-size:.78rem;font-weight:850;color:#dfe7ff;margin-bottom:7px}
+    #zoomRange{width:100%;accent-color:var(--cyan);cursor:pointer}
+    .crop-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+    .crop-btn{
+      min-height:42px;padding:8px 12px;border:1px solid rgba(255,255,255,.13);border-radius:12px;
+      background:linear-gradient(135deg,rgba(0,245,255,.08),rgba(255,53,209,.07));color:#f4f7ff;
+      cursor:pointer;font-weight:850;transition:.18s ease;box-shadow:0 0 0 rgba(0,245,255,0);
+    }
+    .crop-btn:hover{transform:translateY(-2px);border-color:var(--cyan);box-shadow:0 0 18px rgba(0,245,255,.16),0 0 12px rgba(255,53,209,.08)}
+    .crop-btn.active{border-color:var(--yellow);box-shadow:0 0 16px rgba(255,230,0,.13);background:rgba(255,230,0,.08)}
+    .move-pad{display:grid;grid-template-columns:repeat(3,42px);gap:6px;margin-top:10px;justify-content:center}
+    .move-pad button{height:40px;border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.04);color:white;cursor:pointer;font-size:1rem;font-weight:900;transition:.16s}
+    .move-pad button:hover{transform:scale(1.05);border-color:var(--pink);box-shadow:0 0 13px rgba(255,53,209,.15)}
+    .move-pad .blank{visibility:hidden}
+    .crop-tip{margin:12px 0 0;padding:10px 12px;border-radius:13px;color:#d7ddf4;background:rgba(0,245,255,.045);border:1px solid rgba(0,245,255,.1);font-size:.76rem}
+    .crop-output{margin-top:10px;color:#9eacd0;font-size:.74rem;text-align:right}
+    @media(max-width:760px){
+      .crop-tools{grid-template-columns:1fr}
+      .crop-actions{justify-content:stretch}
+      .crop-actions .crop-btn{flex:1}
+      .crop-stage{min-height:250px;padding:10px}
+      .crop-head{align-items:flex-start;flex-direction:column}
+    }
+
+  
+    .crop-flow-note{margin-top:16px;padding:13px 16px;border:1px solid rgba(0,245,255,.18);border-radius:15px;background:linear-gradient(100deg,rgba(0,245,255,.06),rgba(255,53,209,.05));box-shadow:0 0 22px rgba(0,245,255,.06);display:flex;flex-direction:column;gap:4px;color:#dffcff;font-size:.82rem}
+    .crop-flow-note strong{color:#fff;text-shadow:0 0 10px rgba(0,245,255,.28)}
+    .crop-flow-note span{color:#aab5d4}
+</style>
 
 </head>
 
@@ -1958,6 +2020,59 @@
     </div>
 
 
+  </div>
+
+
+
+  <!-- INTERACTIVE CROP EDITOR -->
+  <section id="cropEditor" class="crop-editor hidden" aria-label="Interactive photo crop editor">
+    <div class="crop-head">
+      <div>
+        <h3>🎯 Adjust Your Photo Before Export</h3>
+        <p class="crop-help">Choose the format, then move and zoom your photo yourself. Put the important face, logo or artwork exactly where you want it. We never silently decide which part of your photo to cut.</p>
+      </div>
+      <span id="cropModeBadge" class="crop-badge">FIT · FULL PHOTO</span>
+    </div>
+
+    <div class="crop-stage" id="cropStage">
+      <canvas id="cropCanvas" aria-label="Interactive crop preview"></canvas>
+      <div id="cropFrame" class="crop-frame" aria-hidden="true">
+        <div class="crop-grid"></div><div class="crop-vgrid"></div>
+      </div>
+    </div>
+
+    <div class="crop-tools">
+      <div class="crop-slider">
+        <label for="zoomRange"><span>🔎 Zoom</span><span id="zoomValue">100%</span></label>
+        <input id="zoomRange" type="range" min="100" max="300" value="100" step="1">
+        <div class="crop-output">Output: <strong id="cropOutput">1080 × 1920</strong></div>
+      </div>
+      <div class="crop-actions">
+        <button class="crop-btn active" id="fitBtn" type="button">🖼️ Fit</button>
+        <button class="crop-btn" id="fillBtn" type="button">✂️ Fill / Crop</button>
+        <button class="crop-btn" id="centerBtn" type="button">🎯 Center</button>
+        <button class="crop-btn" id="resetBtn" type="button">↺ Reset</button>
+      </div>
+    </div>
+
+    <div class="move-pad" aria-label="Move photo">
+      <button class="blank" tabindex="-1" type="button">•</button>
+      <button data-move="up" type="button" aria-label="Move up">▲</button>
+      <button class="blank" tabindex="-1" type="button">•</button>
+      <button data-move="left" type="button" aria-label="Move left">◀</button>
+      <button data-move="center" type="button" aria-label="Center">●</button>
+      <button data-move="right" type="button" aria-label="Move right">▶</button>
+      <button class="blank" tabindex="-1" type="button">•</button>
+      <button data-move="down" type="button" aria-label="Move down">▼</button>
+      <button class="blank" tabindex="-1" type="button">•</button>
+    </div>
+    <p class="crop-tip">💡 <strong>Mobile:</strong> drag the photo with one finger and pinch to zoom. <strong>Desktop:</strong> drag with mouse and use the wheel. Fit keeps the complete photo visible; Fill lets you crop intentionally.</p>
+  </section>
+
+
+  <div class="crop-flow-note">
+    <strong>1. Upload photo → 2. Choose size → 3. Choose style → 4. Adjust crop/position → 5. Create → 6. Download</strong>
+    <span>For YouTube thumbnails, WhatsApp DP, Story, Instagram and Profile sizes, you control which part of the photo is visible.</span>
   </div>
 
 
@@ -2761,54 +2876,38 @@
   ) {
 
     return new Promise(
-      (
-        resolve,
-        reject
-      ) => {
+      (resolve, reject) => {
 
-        const url =
-          URL.createObjectURL(
-            file
-          );
+        if (!file || !file.type || !file.type.startsWith("image/")) {
+          reject(new Error("Please choose a supported image file."));
+          return;
+        }
 
+        const reader = new FileReader();
 
-        const image =
-          new Image();
+        reader.onerror = () => {
+          reject(new Error("The browser could not read this photo."));
+        };
 
+        reader.onload = () => {
+          const image = new Image();
 
-        image.onload =
-          () => {
-
-            URL.revokeObjectURL(
-              url
-            );
-
-            resolve(
-              image
-            );
-
+          image.onload = () => {
+            if (!image.naturalWidth || !image.naturalHeight) {
+              reject(new Error("The selected image has no readable dimensions."));
+              return;
+            }
+            resolve(image);
           };
 
-
-        image.onerror =
-          () => {
-
-            URL.revokeObjectURL(
-              url
-            );
-
-            reject(
-              new Error(
-                "Image could not be loaded."
-              )
-            );
-
+          image.onerror = () => {
+            reject(new Error("This image format is not supported by this browser."));
           };
 
+          image.src = String(reader.result || "");
+        };
 
-        image.src =
-          url;
-
+        reader.readAsDataURL(file);
       }
     );
 
@@ -2893,9 +2992,11 @@
         createBtn.disabled =
           false;
 
+        showCropEditor();
+
 
         showStatus(
-          "Photo ready. Choose a format and style, then create your trend photo."
+          "Photo ready. Choose a format, adjust the crop, select a style, then create your trend photo."
         );
 
 
@@ -2912,8 +3013,11 @@
 
       } catch (error) {
 
+        console.error("RacharlaGPT photo load error:", error);
+        createBtn.disabled = true;
+        if (cropEditor) cropEditor.classList.add("hidden");
         showStatus(
-          "Could not load this photo. Please try another image."
+          "⚠️ This photo could not be opened in your browser. Try JPG, PNG or WebP, then upload again."
         );
 
       }
@@ -2958,6 +3062,14 @@
 
 
             updateFormatLabel();
+            if (sourceImage) {
+              cropX = 0;
+              cropY = 0;
+              cropZoom = 1;
+              zoomRange.value = "100";
+              renderCropPreview();
+              showStatus("Format changed. Adjust the photo position before creating.");
+            }
 
 
             track(
@@ -3565,302 +3677,334 @@
   }
 
 
-  function createTrendPhoto() {
-
-    if (!sourceImage) {
-
-      showStatus(
-        "Please upload a photo first."
-      );
-
-      return;
-
-    }
-
-
-    const format =
-      formats[
-        selectedFormat
-      ];
-
-
-    const width =
-      format.width;
-
-
-    const height =
-      format.height;
-
-
-    /*
-     * Limit internal canvas size on
-     * lower-memory mobile devices.
-     *
-     * The output remains social-media
-     * friendly while avoiding enormous
-     * memory allocations.
-     */
-
-    const maxPixels =
-      2073600;
-
-
-    let outputWidth =
-      width;
-
-
-    let outputHeight =
-      height;
-
-
-    if (
-      width *
-      height >
-      maxPixels
-    ) {
-
-      const scale =
-        Math.sqrt(
-          maxPixels /
-          (
-            width *
-            height
-          )
-        );
-
-
-      outputWidth =
-        Math.round(
-          width *
-          scale
-        );
-
-
-      outputHeight =
-        Math.round(
-          height *
-          scale
-        );
-
-    }
-
-
-    resultCanvas.width =
-      outputWidth;
-
-
-    resultCanvas.height =
-      outputHeight;
-
-
-    ctx.clearRect(
-      0,
-      0,
-      outputWidth,
-      outputHeight
-    );
-
-
-    /*
-     * Background presentation.
-     *
-     * The same photo is used behind
-     * the main photo, so there is no
-     * external asset dependency.
-     */
-
-    drawBlurBackground(
-      sourceImage,
-      outputWidth,
-      outputHeight
-    );
-
-
-    /*
-     * Add a subtle dark overlay.
-     */
-
-    ctx.fillStyle =
-      "rgba(0,0,0,.13)";
-
-
-    ctx.fillRect(
-      0,
-      0,
-      outputWidth,
-      outputHeight
-    );
-
-
-    /*
-     * Gradient overlay for some
-     * formats/styles.
-     */
-
-    if (
-      selectedStyle ===
-      "neon"
-    ) {
-
-      drawGradientBackground(
-        outputWidth,
-        outputHeight
-      );
-
-    }
-
-
-    /*
-     * Main photo.
-     */
-
-    ctx.save();
-
-
-    if (
-      selectedStyle ===
-      "film"
-    ) {
-
-      ctx.filter =
-        "saturate(.88) contrast(1.04)";
-
-    }
-
-
-    if (
-      selectedStyle ===
-      "warm"
-    ) {
-
-      ctx.filter =
-        "saturate(1.08) sepia(.08)";
-
-    }
-
-
-    if (
-      selectedStyle ===
-      "cool"
-    ) {
-
-      ctx.filter =
-        "saturate(1.02) hue-rotate(5deg)";
-
-    }
-
-
-    if (
-      selectedStyle ===
-      "mono"
-    ) {
-
-      ctx.filter =
-        "grayscale(1)";
-
-    }
-
-
-    drawMainPhoto(
-      sourceImage,
-      outputWidth,
-      outputHeight
-    );
-
-
-    ctx.restore();
-
-
-    /*
-     * Style overlay.
-     */
-
-    applyStyle(
-      selectedStyle,
-      outputWidth,
-      outputHeight
-    );
-
-
-    /*
-     * Neon light accents.
-     */
-
-    if (
-      selectedStyle ===
-      "neon"
-    ) {
-
-      const glow =
-        ctx.createRadialGradient(
-          outputWidth * .15,
-          outputHeight * .15,
-          0,
-          outputWidth * .15,
-          outputHeight * .15,
-          outputWidth * .65
-        );
-
-
-      glow.addColorStop(
-        0,
-        "rgba(0,245,255,.22)"
-      );
-
-
-      glow.addColorStop(
-        1,
-        "rgba(0,245,255,0)"
-      );
-
-
-      ctx.fillStyle =
-        glow;
-
-
-      ctx.fillRect(
-        0,
-        0,
-        outputWidth,
-        outputHeight
-      );
-
-    }
-
-
-    resultCanvas.style.display =
-      "block";
-
-
-    emptyPreview.style.display =
-      "none";
-
-
-    pngBtn.disabled =
-      false;
-
-
-    jpgBtn.disabled =
-      false;
-
-
-    showStatus(
-      "✓ Your trend photo is ready. Download PNG or JPG."
-    );
-
-
-    track(
-      "trend_photo_created",
-      {
-        format:
-          selectedFormat,
-        style:
-          selectedStyle
-      }
-    );
-
+  /* =========================
+     INTERACTIVE CROP ENGINE
+     ========================= */
+
+  const cropEditor = document.getElementById("cropEditor");
+  const cropCanvas = document.getElementById("cropCanvas");
+  const cropCtx = cropCanvas.getContext("2d");
+  const cropStage = document.getElementById("cropStage");
+  const cropFrame = document.getElementById("cropFrame");
+  const zoomRange = document.getElementById("zoomRange");
+  const zoomValue = document.getElementById("zoomValue");
+  const cropOutput = document.getElementById("cropOutput");
+  const cropModeBadge = document.getElementById("cropModeBadge");
+  const fitBtn = document.getElementById("fitBtn");
+  const fillBtn = document.getElementById("fillBtn");
+  const centerBtn = document.getElementById("centerBtn");
+  const resetBtn = document.getElementById("resetBtn");
+
+  let cropMode = "fit";
+  let cropZoom = 1;
+  let cropX = 0;
+  let cropY = 0;
+  let cropDragging = false;
+  let cropPointer = null;
+
+  function getFormat() {
+    return formats[selectedFormat];
   }
 
+  function cropBaseScale(format, mode) {
+    if (!sourceImage) return 1;
+    const fit = Math.min(format.width / sourceImage.naturalWidth, format.height / sourceImage.naturalHeight);
+    const fill = Math.max(format.width / sourceImage.naturalWidth, format.height / sourceImage.naturalHeight);
+    return mode === "fill" ? fill : fit;
+  }
+
+  function cropScale() {
+    return cropBaseScale(getFormat(), cropMode) * cropZoom;
+  }
+
+  function updateCropButtons() {
+    fitBtn.classList.toggle("active", cropMode === "fit");
+    fillBtn.classList.toggle("active", cropMode === "fill");
+    cropModeBadge.textContent = cropMode === "fit" ? "FIT · FULL PHOTO" : "FILL · YOUR CROP";
+  }
+
+  function updateCropFrame() {
+    if (!sourceImage) return;
+    const rect = cropCanvas.getBoundingClientRect();
+    const stageRect = cropStage.getBoundingClientRect();
+    const f = getFormat();
+    const displayRatio = f.width / f.height;
+    let fw = rect.width;
+    let fh = fw / displayRatio;
+    if (fh > rect.height) {
+      fh = rect.height;
+      fw = fh * displayRatio;
+    }
+    cropFrame.style.width = fw + "px";
+    cropFrame.style.height = fh + "px";
+    cropFrame.style.left = (rect.left - stageRect.left + (rect.width - fw) / 2) + "px";
+    cropFrame.style.top = (rect.top - stageRect.top + (rect.height - fh) / 2) + "px";
+  }
+
+  function renderCropPreview() {
+    if (!sourceImage) return;
+    const f = getFormat();
+    const maxPreview = 760;
+    let pw = f.width, ph = f.height;
+    const scaleToPreview = Math.min(1, maxPreview / Math.max(pw, ph));
+    pw = Math.max(240, Math.round(pw * scaleToPreview));
+    ph = Math.max(240, Math.round(ph * scaleToPreview));
+
+    cropCanvas.width = pw;
+    cropCanvas.height = ph;
+
+    const s = cropScale();
+    const iw = sourceImage.naturalWidth * s * scaleToPreview;
+    const ih = sourceImage.naturalHeight * s * scaleToPreview;
+    const dx = (pw - iw) / 2 + cropX * scaleToPreview;
+    const dy = (ph - ih) / 2 + cropY * scaleToPreview;
+
+    cropCtx.clearRect(0,0,pw,ph);
+
+    if (cropMode === "fit") {
+      cropCtx.fillStyle = "#090b18";
+      cropCtx.fillRect(0,0,pw,ph);
+    } else {
+      cropCtx.fillStyle = "#050714";
+      cropCtx.fillRect(0,0,pw,ph);
+    }
+
+    cropCtx.save();
+    cropCtx.imageSmoothingEnabled = true;
+    cropCtx.imageSmoothingQuality = "high";
+    cropCtx.drawImage(sourceImage, dx, dy, iw, ih);
+    cropCtx.restore();
+
+    cropOutput.textContent = `${f.width} × ${f.height}`;
+    zoomValue.textContent = Math.round(cropZoom * 100) + "%";
+    updateCropButtons();
+
+    requestAnimationFrame(updateCropFrame);
+  }
+
+  function showCropEditor() {
+    if (!sourceImage) return;
+    cropEditor.classList.remove("hidden");
+    resetCrop(false);
+    cropEditor.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  function resetCrop(scrollToEditor = false) {
+    cropMode = "fit";
+    cropZoom = 1;
+    cropX = 0;
+    cropY = 0;
+    zoomRange.value = "100";
+    renderCropPreview();
+    if (scrollToEditor) cropEditor.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  function setCropMode(mode) {
+    cropMode = mode;
+    cropZoom = 1;
+    cropX = 0;
+    cropY = 0;
+    zoomRange.value = "100";
+    renderCropPreview();
+    showStatus(mode === "fit"
+      ? "✓ Fit mode: the complete photo stays visible. No part is intentionally cropped."
+      : "✓ Fill mode: the frame is filled. Drag and zoom to choose exactly what is cropped.");
+  }
+
+  function moveCrop(dx, dy) {
+    if (!sourceImage) return;
+    cropX += dx;
+    cropY += dy;
+    renderCropPreview();
+  }
+
+  function exportCropToCanvas() {
+    const f = getFormat();
+    const maxPixels = 2073600;
+    const exportScale = (f.width * f.height > maxPixels)
+      ? Math.sqrt(maxPixels / (f.width * f.height))
+      : 1;
+    const ow = Math.round(f.width * exportScale);
+    const oh = Math.round(f.height * exportScale);
+
+    resultCanvas.width = ow;
+    resultCanvas.height = oh;
+    ctx.clearRect(0,0,ow,oh);
+
+    const s = cropBaseScale(f, cropMode) * cropZoom;
+    const iw = sourceImage.naturalWidth * s * exportScale;
+    const ih = sourceImage.naturalHeight * s * exportScale;
+    const dx = (ow - iw) / 2 + cropX * exportScale;
+    const dy = (oh - ih) / 2 + cropY * exportScale;
+
+    if (cropMode === "fit") {
+      /* Full photo preservation: use a blurred same-photo background behind it. */
+      ctx.save();
+      ctx.filter = "blur(32px)";
+      const bgScale = Math.max(ow / sourceImage.naturalWidth, oh / sourceImage.naturalHeight);
+      const bw = sourceImage.naturalWidth * bgScale;
+      const bh = sourceImage.naturalHeight * bgScale;
+      ctx.drawImage(sourceImage, (ow-bw)/2, (oh-bh)/2, bw, bh);
+      ctx.restore();
+      ctx.fillStyle = "rgba(5,7,20,.28)";
+      ctx.fillRect(0,0,ow,oh);
+    } else {
+      ctx.fillStyle = "#050714";
+      ctx.fillRect(0,0,ow,oh);
+    }
+
+    ctx.save();
+    if (selectedStyle === "film") ctx.filter = "saturate(.88) contrast(1.04)";
+    if (selectedStyle === "warm") ctx.filter = "saturate(1.08) sepia(.08)";
+    if (selectedStyle === "cool") ctx.filter = "saturate(1.02) hue-rotate(5deg)";
+    if (selectedStyle === "mono") ctx.filter = "grayscale(1)";
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(sourceImage, dx, dy, iw, ih);
+    ctx.restore();
+
+    applyStyle(selectedStyle, ow, oh);
+
+    if (selectedStyle === "neon") {
+      const glow = ctx.createRadialGradient(ow*.15, oh*.15, 0, ow*.15, oh*.15, ow*.65);
+      glow.addColorStop(0,"rgba(0,245,255,.22)");
+      glow.addColorStop(1,"rgba(0,245,255,0)");
+      ctx.fillStyle = glow;
+      ctx.fillRect(0,0,ow,oh);
+    }
+
+    return {ow,oh};
+  }
+
+  function createTrendPhoto() {
+    if (!sourceImage) {
+      showStatus("Please upload a photo first.");
+      return;
+    }
+
+    exportCropToCanvas();
+
+    resultCanvas.style.display = "block";
+    emptyPreview.style.display = "none";
+    pngBtn.disabled = false;
+    jpgBtn.disabled = false;
+
+    showStatus("✓ Photo created using your crop position. Download PNG or JPG.");
+    track("trend_photo_created", {
+      format: selectedFormat,
+      style: selectedStyle,
+      crop_mode: cropMode,
+      zoom: Math.round(cropZoom * 100)
+    });
+  }
+
+
+
+
+  fitBtn.addEventListener("click", () => setCropMode("fit"));
+  fillBtn.addEventListener("click", () => setCropMode("fill"));
+  centerBtn.addEventListener("click", () => {
+    cropX = 0; cropY = 0; renderCropPreview();
+  });
+  resetBtn.addEventListener("click", () => resetCrop());
+
+  zoomRange.addEventListener("input", () => {
+    cropZoom = Number(zoomRange.value) / 100;
+    renderCropPreview();
+  });
+
+  document.querySelectorAll("[data-move]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const amount = Math.max(12, Math.min(60, Math.round(Math.min(getFormat().width,getFormat().height) * .025)));
+      const dir = btn.dataset.move;
+      if (dir === "up") moveCrop(0, -amount);
+      if (dir === "down") moveCrop(0, amount);
+      if (dir === "left") moveCrop(-amount, 0);
+      if (dir === "right") moveCrop(amount, 0);
+      if (dir === "center") { cropX = 0; cropY = 0; renderCropPreview(); }
+    });
+  });
+
+  const cropPointers = new Map();
+  let pinchStartDistance = 0;
+  let pinchStartZoom = 1;
+
+  function pointerDistance() {
+    const pts = [...cropPointers.values()];
+    if (pts.length < 2) return 0;
+    return Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+  }
+
+  cropCanvas.addEventListener("pointerdown", e => {
+    cropPointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+    try { cropCanvas.setPointerCapture(e.pointerId); } catch (_) {}
+    if (cropPointers.size === 1) {
+      cropDragging = true;
+      cropPointer = {x:e.clientX, y:e.clientY};
+      cropCanvas.classList.add("dragging");
+    } else if (cropPointers.size === 2) {
+      cropDragging = false;
+      pinchStartDistance = pointerDistance();
+      pinchStartZoom = cropZoom;
+    }
+  });
+
+  cropCanvas.addEventListener("pointermove", e => {
+    if (!cropPointers.has(e.pointerId)) return;
+    cropPointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+
+    if (cropPointers.size >= 2) {
+      const d = pointerDistance();
+      if (pinchStartDistance > 0 && d > 0) {
+        cropZoom = Math.max(1, Math.min(3, pinchStartZoom * (d / pinchStartDistance)));
+        zoomRange.value = String(Math.round(cropZoom * 100));
+        renderCropPreview();
+      }
+      return;
+    }
+
+    if (!cropDragging || !cropPointer) return;
+    const dx = e.clientX - cropPointer.x;
+    const dy = e.clientY - cropPointer.y;
+    cropX += dx * 1.5;
+    cropY += dy * 1.5;
+    cropPointer = {x:e.clientX, y:e.clientY};
+    renderCropPreview();
+  });
+
+  function stopCropPointer(e) {
+    cropPointers.delete(e.pointerId);
+    if (cropPointers.size === 1) {
+      const only = [...cropPointers.values()][0];
+      cropDragging = true;
+      cropPointer = {x:only.x, y:only.y};
+    } else {
+      cropDragging = false;
+      cropPointer = null;
+      pinchStartDistance = 0;
+    }
+    cropCanvas.classList.remove("dragging");
+    try { cropCanvas.releasePointerCapture(e.pointerId); } catch (_) {}
+  }
+
+  cropCanvas.addEventListener("pointerup", stopCropPointer);
+  cropCanvas.addEventListener("pointercancel", stopCropPointer);
+  cropCanvas.addEventListener("pointerleave", e => {
+    if (e.pointerType === "mouse" && cropDragging && cropPointers.size === 1) {
+      stopCropPointer(e);
+    }
+  });
+
+  cropCanvas.addEventListener("wheel", e => {
+    e.preventDefault();
+    cropZoom = Math.max(1, Math.min(3, cropZoom + (e.deltaY < 0 ? .05 : -.05)));
+    zoomRange.value = String(Math.round(cropZoom * 100));
+    renderCropPreview();
+  }, {passive:false});
+
+  window.addEventListener("resize", () => {
+    if (sourceImage && !cropEditor.classList.contains("hidden")) renderCropPreview();
+  });
 
   createBtn.addEventListener(
     "click",
