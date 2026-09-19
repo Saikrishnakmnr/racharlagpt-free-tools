@@ -1,23 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AI Avatar Trend Studio — Free AI Avatar from Photo | RacharlaGPT Trend</title>
-  <meta name="description" content="Create a trendy AI avatar from your photo. Explore Y2K, cinematic, anime, cyberpunk, 3D and social profile avatar styles with RacharlaGPT Trend.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://trend.racharlagpt.in/retro-photo.html">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JDHHG4C29"></script>
+  <meta name="theme-color" content="#070b22">
+
+  <title>Free AI Background Remover & Photo Studio | RacharlaGPT Trend</title>
+
+  <meta name="description"
+        content="Free AI background remover and photo studio by RacharlaGPT Trend. Remove photo backgrounds in your browser, add a new background or upload your own, then download PNG or JPG. No login required.">
+
+  <meta name="keywords"
+        content="AI background remover, free background remover, remove background from photo, photo background changer, transparent PNG maker, passport photo background, profile photo background, product photo background, free AI photo tool">
+
+  <meta name="author" content="RacharlaGPT">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical"
+        href="https://trend.racharlagpt.in/retro-photo.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Free AI Background Remover & Photo Studio | RacharlaGPT Trend">
+  <meta property="og:description"
+        content="Remove photo backgrounds with browser-based AI, choose a new background or upload your own. Free to try with no login.">
+  <meta property="og:url"
+        content="https://trend.racharlagpt.in/retro-photo.html">
+  <meta property="og:site_name"
+        content="RacharlaGPT Trend">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Free AI Background Remover | RacharlaGPT Trend">
+  <meta name="twitter:description"
+        content="Remove and replace photo backgrounds with browser-based AI. No login required.">
+
+  <!-- Google Analytics 4 -->
+  <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-1JDHHG4C29"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
-    gtag('config', 'G-1JDHHG4C29');
+
+    gtag('config', 'G-1JDHHG4C29', {
+      anonymize_ip: true
+    });
   </script>
 
   <!-- Google AdSense -->
@@ -25,156 +64,701 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1188239058737040"
     crossorigin="anonymous"></script>
 
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the AI background remover free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RacharlaGPT Trend provides this browser-based background removal tool without requiring a user login or an image-generation API account. Your browser downloads the AI model needed for processing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to upload my photo to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The background-removal processing is designed to run in the browser. The selected photo is processed locally by the browser rather than being sent to a cloud image-generation API."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upload my own background?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. After removing the background, you can choose a built-in background or upload an image from your phone or computer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I download a transparent PNG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The transparent cutout can be downloaded as a PNG. You can also place it on a background and download a JPG."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it require an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No RacharlaGPT Trend account is required for this tool."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
-    .avatar-hero {
-      text-align:center;
-      padding:34px 18px 18px;
+    :root {
+      --bg: #050816;
+      --panel: #0c1230;
+      --panel2: #10183d;
+      --text: #f8fbff;
+      --muted: #aeb9d6;
+      --cyan: #00f6ff;
+      --pink: #ff3bd4;
+      --yellow: #ffe600;
+      --green: #39ff9b;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 0 30px rgba(0,246,255,.13);
     }
 
-    .avatar-badge {
-      display:inline-block;
-      padding:8px 16px;
-      border:1px solid rgba(0,255,255,.55);
-      border-radius:999px;
-      color:#00ffff;
-      box-shadow:0 0 18px rgba(0,255,255,.25);
-      font-weight:800;
-      letter-spacing:.08em;
-      margin-bottom:14px;
+    * {
+      box-sizing: border-box;
     }
 
-    .avatar-title {
-      font-size:clamp(2rem,6vw,4.4rem);
-      line-height:1;
-      margin:8px 0 14px;
-      font-weight:950;
-      background:linear-gradient(90deg,#00ffff,#ff38d1,#ffe600,#00ffff);
-      background-size:300% 100%;
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-      animation:avatarGradient 7s linear infinite;
-      text-shadow:0 0 30px rgba(0,255,255,.18);
+    html {
+      scroll-behavior: smooth;
     }
 
-    @keyframes avatarGradient {
-      0%{background-position:0% 50%}
-      100%{background-position:300% 50%}
-    }
-
-    .avatar-subtitle {
-      max-width:760px;
-      margin:0 auto;
-      color:#d8eaff;
-      font-size:1.05rem;
-      line-height:1.7;
-    }
-
-    .avatar-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
-      margin:26px 0;
-    }
-
-    .avatar-card {
-      position:relative;
-      padding:24px;
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:22px;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
       background:
-        linear-gradient(145deg,rgba(0,255,255,.08),rgba(255,0,180,.08)),
-        rgba(10,14,30,.86);
+        radial-gradient(circle at 15% 10%, rgba(0,246,255,.12), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(255,59,212,.12), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(255,230,0,.07), transparent 30%),
+        var(--bg);
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 28px));
+      margin: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(5,8,22,.84);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: 950;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+
+    .brand-r {
+      color: var(--cyan);
+      text-shadow: 0 0 14px rgba(0,246,255,.6);
+    }
+
+    .brand-g {
+      color: var(--pink);
+      text-shadow: 0 0 14px rgba(255,59,212,.55);
+    }
+
+    .brand-t {
+      color: var(--yellow);
+      text-shadow: 0 0 14px rgba(255,230,0,.45);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #dbe4ff;
+      font-weight: 750;
+      font-size: .9rem;
+    }
+
+    .nav-links a:hover {
+      background: rgba(0,246,255,.1);
+      color: white;
+    }
+
+    .hero {
+      padding: 54px 0 28px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,246,255,.25);
+      background: rgba(0,246,255,.07);
+      color: var(--cyan);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px auto 12px;
+      max-width: 900px;
+      font-size: clamp(2.1rem, 7vw, 4.5rem);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        var(--cyan),
+        #ffffff,
+        var(--pink),
+        var(--yellow)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 250% 100%;
+      animation: gradientMove 7s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0%,100% { background-position: 0 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .notice {
+      margin: 25px auto;
+      max-width: 820px;
+      padding: 14px 17px;
+      border: 1px solid rgba(57,255,155,.2);
+      border-radius: 16px;
+      background: rgba(57,255,155,.06);
+      color: #d9ffe9;
+      font-size: .92rem;
+    }
+
+    .tool {
+      margin: 20px auto 50px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(16,24,61,.96), rgba(8,12,34,.96));
       box-shadow:
-        0 0 24px rgba(0,255,255,.08),
-        inset 0 0 20px rgba(255,0,200,.04);
-      transition:.28s ease;
-      overflow:hidden;
+        0 0 0 1px rgba(0,246,255,.04),
+        var(--shadow);
     }
 
-    .avatar-card:hover {
-      transform:translateY(-7px);
-      border-color:rgba(0,255,255,.6);
-      box-shadow:
-        0 0 35px rgba(0,255,255,.2),
-        0 0 55px rgba(255,0,190,.1);
+    .section-title {
+      margin: 0 0 6px;
+      font-size: 1.45rem;
     }
 
-    .avatar-icon {
-      font-size:2.5rem;
-      margin-bottom:12px;
+    .section-sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: .92rem;
     }
 
-    .avatar-card h3 {
-      margin:0 0 8px;
-      color:#fff;
+    .upload-zone {
+      position: relative;
+      border: 2px dashed rgba(0,246,255,.45);
+      border-radius: 22px;
+      padding: 28px 18px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(0,246,255,.09), transparent 60%);
+      transition: .2s ease;
+      cursor: pointer;
     }
 
-    .avatar-card p {
-      color:#c9d5e9;
-      line-height:1.55;
-      margin:0 0 18px;
+    .upload-zone:hover,
+    .upload-zone.dragging {
+      border-color: var(--pink);
+      box-shadow: 0 0 28px rgba(255,59,212,.15);
+      transform: translateY(-1px);
     }
 
-    .avatar-style {
-      display:flex;
-      flex-wrap:wrap;
-      gap:9px;
-      justify-content:center;
-      margin:22px 0;
+    .upload-icon {
+      font-size: 2.5rem;
     }
 
-    .avatar-style span {
-      padding:9px 13px;
-      border-radius:999px;
-      background:linear-gradient(90deg,rgba(0,255,255,.12),rgba(255,0,190,.12));
-      border:1px solid rgba(255,255,255,.15);
-      color:#fff;
-      font-weight:700;
+    .upload-zone strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-top: 7px;
     }
 
-    .avatar-steps {
-      counter-reset:step;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-      gap:16px;
-      margin:24px 0;
+    .upload-zone span {
+      color: var(--muted);
+      font-size: .88rem;
     }
 
-    .avatar-step {
-      padding:20px;
-      border-radius:18px;
-      background:rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.1);
+    #photoInput,
+    #backgroundInput {
+      display: none;
     }
 
-    .avatar-step strong {
-      display:block;
-      color:#00ffff;
-      font-size:1.1rem;
-      margin-bottom:7px;
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
     }
 
-    .avatar-note {
-      padding:18px;
-      border-radius:18px;
-      background:rgba(255,220,0,.06);
-      border:1px solid rgba(255,220,0,.25);
-      color:#f4edc2;
-      line-height:1.6;
-      margin-top:24px;
+    .control-card {
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255,255,255,.025);
     }
 
-    .avatar-privacy {
-      color:#aab8cc;
-      font-size:.9rem;
-      line-height:1.55;
-      margin-top:14px;
+    .control-card h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
     }
 
-    @media (prefers-reduced-motion:reduce) {
-      .avatar-title { animation:none; }
-      .avatar-card { transition:none; }
+    .background-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    .bg-btn {
+      min-height: 58px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 13px;
+      cursor: pointer;
+      color: white;
+      font-weight: 850;
+      font-size: .7rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,.8);
+      transition: .18s ease;
+    }
+
+    .bg-btn:hover,
+    .bg-btn.active {
+      transform: translateY(-2px);
+      border-color: var(--cyan);
+      box-shadow: 0 0 16px rgba(0,246,255,.25);
+    }
+
+    .bg-original {
+      background: transparent;
+    }
+
+    .bg-white {
+      background: white;
+      color: #111;
+      text-shadow: none;
+    }
+
+    .bg-black {
+      background: #050505;
+    }
+
+    .bg-blue {
+      background: linear-gradient(135deg, #0066ff, #00d9ff);
+    }
+
+    .bg-purple {
+      background: linear-gradient(135deg, #651fff, #ff3bd4);
+    }
+
+    .bg-sunset {
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    }
+
+    .bg-neon {
+      background:
+        radial-gradient(circle at 30% 30%, #00f6ff, transparent 25%),
+        radial-gradient(circle at 70% 60%, #ff3bd4, transparent 30%),
+        #080018;
+    }
+
+    .bg-nature {
+      background:
+        linear-gradient(135deg, #0b6623, #7ac943);
+    }
+
+    .bg-gold {
+      background: linear-gradient(135deg, #6c4d00, #ffe600);
+    }
+
+    .bg-cinema {
+      background:
+        linear-gradient(135deg, #080808, #2b1a11, #6a3d20);
+    }
+
+    .custom-bg {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      min-height: 48px;
+      padding: 11px 18px;
+      border-radius: 14px;
+      color: #07101b;
+      font-weight: 950;
+      font-size: .95rem;
+      transition: .18s ease;
+    }
+
+    .btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      width: 100%;
+      margin-top: 18px;
+      background: linear-gradient(90deg, var(--cyan), #78fff4);
+      box-shadow: 0 0 24px rgba(0,246,255,.24);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(90deg, var(--pink), #ff93e9);
+    }
+
+    .btn-yellow {
+      background: linear-gradient(90deg, var(--yellow), #fff6a0);
+    }
+
+    .btn-green {
+      background: linear-gradient(90deg, var(--green), #b1ffd8);
+    }
+
+    .status {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(0,246,255,.07);
+      border: 1px solid rgba(0,246,255,.2);
+      color: #dffcff;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.error {
+      border-color: rgba(255,70,100,.35);
+      background: rgba(255,70,100,.08);
+      color: #ffd9df;
+    }
+
+    .progress {
+      height: 7px;
+      margin-top: 11px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .progress span {
+      display: block;
+      width: 30%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--pink),
+        var(--yellow)
+      );
+      animation: progressMove 1.2s infinite ease-in-out;
+    }
+
+    @keyframes progressMove {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(400%); }
+    }
+
+    .preview-area {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .preview-box {
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(45deg, #18203d 25%, transparent 25%),
+        linear-gradient(-45deg, #18203d 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #18203d 75%),
+        linear-gradient(-45deg, transparent 75%, #18203d 75%);
+      background-size: 24px 24px;
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+    }
+
+    .preview-box img,
+    .preview-box canvas {
+      max-width: 100%;
+      max-height: 520px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .preview-label {
+      position: absolute;
+      align-self: flex-start;
+      margin: 10px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.7);
+      font-size: .72rem;
+      font-weight: 850;
+      z-index: 2;
+    }
+
+    .preview-wrap {
+      position: relative;
+    }
+
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .download-row .btn {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .info-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .info-card .icon {
+      font-size: 1.8rem;
+    }
+
+    .info-card h3 {
+      margin: 8px 0 5px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .content-section {
+      margin: 45px auto;
+      max-width: 900px;
+    }
+
+    .content-section h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .content-section h3 {
+      margin-top: 25px;
+    }
+
+    .content-section p,
+    .content-section li {
+      color: #c2cbe1;
+    }
+
+    .faq {
+      border-top: 1px solid var(--border);
+    }
+
+    details {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+    }
+
+    .ad-wrap {
+      margin: 28px auto;
+      padding: 8px;
+      min-height: 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .ad-label {
+      color: #7884a5;
+      font-size: .68rem;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .related {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0 50px;
+    }
+
+    .related a {
+      padding: 17px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.025);
+      transition: .18s ease;
+    }
+
+    .related a:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .related strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .related span {
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:nth-child(n+2) {
+        display: none;
+      }
+
+      .controls,
+      .preview-area,
+      .info-grid,
+      .related {
+        grid-template-columns: 1fr;
+      }
+
+      .background-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .tool {
+        padding: 15px;
+        border-radius: 22px;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .preview-box {
+        min-height: 220px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
@@ -182,280 +766,1814 @@
 <body>
 
 <header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html" aria-label="RacharlaGPT Trend home">
-      <span>RacharlaGPT</span> <b>TREND</b>
+  <div class="container nav">
+
+    <a class="brand" href="https://racharlagpt.in/" aria-label="RacharlaGPT home">
+      <span class="brand-r">Racharla</span><span class="brand-g">GPT</span>
+      <span class="brand-t">TREND</span>
     </a>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="retro-photo.html">Avatar Studio</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="https://racharlagpt.in/">RacharlaGPT</a>
+      <a href="index.html">Trend Home</a>
       <a href="image-tools.html">Image Tools</a>
-      <a href="creator-tools.html">Creator Tools</a>
     </nav>
+
   </div>
 </header>
 
-<main class="container">
 
-  <section class="avatar-hero">
-    <div class="avatar-badge">✨ AI AVATAR TREND STUDIO</div>
+<main>
 
-    <h1 class="avatar-title">
-      Turn Your Photo Into a Trendy AI Avatar
+  <section class="hero container">
+
+    <span class="eyebrow">FREE AI PHOTO STUDIO</span>
+
+    <h1>
+      <span class="gradient-text">
+        Remove Your Photo Background
+      </span>
+      <br>
+      & Create a New Look
     </h1>
 
-    <p class="avatar-subtitle">
-      Keep your recognizable face while exploring futuristic, cinematic,
-      anime, 3D, cyberpunk, creator and social-profile avatar styles.
+    <p>
+      Use browser-based AI to remove the background from your photo,
+      choose a new background, or upload your own background from your
+      phone or computer.
     </p>
 
-    <div class="avatar-style" aria-label="Avatar styles">
-      <span>3D</span>
-      <span>Anime</span>
-      <span>Cyberpunk</span>
-      <span>Fantasy</span>
-      <span>Creator</span>
-      <span>Gaming</span>
-      <span>Professional</span>
-      <span>Social Profile</span>
+    <div class="notice">
+      🔒 <strong>Privacy-friendly processing:</strong>
+      the AI background-removal step runs in your browser.
+      No RacharlaGPT login is required.
     </div>
+
   </section>
 
 
-  <section class="tool-panel">
+  <!-- MAIN TOOL -->
 
-    <div class="section-heading">
-      <span class="eyebrow">FREE AI OPTION</span>
-      <h2>Make Your AI Avatar</h2>
-      <p>
-        Use a free external AI avatar creator that supports a reference photo.
-        Your photo is sent directly to that service when you choose to use it.
-      </p>
-    </div>
+  <section class="container tool" id="background-studio">
 
-    <div class="avatar-grid">
+    <h2 class="section-title">
+      ✨ AI Background Studio
+    </h2>
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🧑‍🎨</div>
+    <p class="section-sub">
+      Upload one photo. Remove its background with AI.
+      Then use a ready-made background or your own image.
+    </p>
 
-        <h3>AI Avatar from Photo</h3>
 
-        <p>
-          Upload a clear portrait and create a stylized avatar while keeping
-          important facial characteristics recognizable.
-        </p>
+    <!-- PHOTO UPLOAD -->
 
-        <a
-          class="btn btn-primary"
-          href="https://free.ai/avatar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-ga-event="avatar_external_open">
-          ✨ CREATE MY AI AVATAR
-        </a>
+    <label class="upload-zone" id="photoDrop">
 
-        <div class="avatar-privacy">
-          This opens the external AI service in a new tab. RacharlaGPT Trend
-          does not upload your photo to its own server through this button.
+      <input
+        id="photoInput"
+        type="file"
+        accept="image/jpeg,image/png,image/webp,image/*"
+      >
+
+      <div class="upload-icon">📸</div>
+
+      <strong>Upload your photo</strong>
+
+      <span>
+        Tap here to choose a photo from your phone or computer
+      </span>
+
+    </label>
+
+
+    <!-- CONTROLS -->
+
+    <div class="controls">
+
+      <div class="control-card">
+
+        <h3>🎨 Choose a new background</h3>
+
+        <div class="background-grid">
+
+          <button class="bg-btn bg-original active"
+                  data-bg="transparent"
+                  type="button">
+            Transparent
+          </button>
+
+          <button class="bg-btn bg-white"
+                  data-bg="white"
+                  type="button">
+            White
+          </button>
+
+          <button class="bg-btn bg-black"
+                  data-bg="black"
+                  type="button">
+            Black
+          </button>
+
+          <button class="bg-btn bg-blue"
+                  data-bg="blue"
+                  type="button">
+            Blue
+          </button>
+
+          <button class="bg-btn bg-purple"
+                  data-bg="purple"
+                  type="button">
+            Purple
+          </button>
+
+          <button class="bg-btn bg-sunset"
+                  data-bg="sunset"
+                  type="button">
+            Sunset
+          </button>
+
+          <button class="bg-btn bg-neon"
+                  data-bg="neon"
+                  type="button">
+            Neon
+          </button>
+
+          <button class="bg-btn bg-nature"
+                  data-bg="nature"
+                  type="button">
+            Nature
+          </button>
+
+          <button class="bg-btn bg-gold"
+                  data-bg="gold"
+                  type="button">
+            Gold
+          </button>
+
+          <button class="bg-btn bg-cinema"
+                  data-bg="cinema"
+                  type="button">
+            Cinema
+          </button>
+
         </div>
-      </article>
+
+      </div>
 
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🧑‍💼</div>
+      <div class="control-card">
 
-        <h3>Professional Avatar</h3>
+        <h3>🖼️ Use your own background</h3>
 
-        <p>
-          For profile photos, creator pages, portfolios, speaker profiles and
-          professional social accounts.
+        <p style="color:var(--muted);font-size:.88rem;margin-top:0;">
+          Choose an image from your mobile gallery or computer.
         </p>
 
-        <a
-          class="btn btn-secondary"
-          href="https://free.ai/headshot/"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-ga-event="headshot_external_open">
-          🚀 TRY AI HEADSHOT
-        </a>
-      </article>
+        <label class="btn btn-secondary custom-bg"
+               for="backgroundInput">
+          📁 Upload My Background
+        </label>
 
+        <input
+          id="backgroundInput"
+          type="file"
+          accept="image/jpeg,image/png,image/webp,image/*"
+        >
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🎮</div>
-
-        <h3>3D Avatar</h3>
-
-        <p>
-          Create a customizable 3D-style character from a selfie for gaming,
-          VR, creator profiles and digital projects.
+        <p id="customBackgroundName"
+           style="color:var(--muted);font-size:.78rem;">
+          No custom background selected.
         </p>
 
-        <a
-          class="btn btn-secondary"
-          href="https://avatarsdk.com/avatar-maker/"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-ga-event="3d_avatar_external_open">
-          🎮 TRY 3D AVATAR
-        </a>
-      </article>
-
-    </div>
-
-    <div class="avatar-note">
-      <strong>Important:</strong>
-      AI services can change their free limits, models or availability.
-      RacharlaGPT Trend does not promise unlimited generation from an
-      external provider.
-    </div>
-
-  </section>
-
-
-  <section class="section-block">
-
-    <div class="section-heading">
-      <span class="eyebrow">HOW IT WORKS</span>
-      <h2>Create Your Trend Avatar</h2>
-    </div>
-
-    <div class="avatar-steps">
-
-      <div class="avatar-step">
-        <strong>01 · Choose a clear photo</strong>
-        Use a well-lit portrait where your face is easy to see.
-      </div>
-
-      <div class="avatar-step">
-        <strong>02 · Choose your style</strong>
-        Try 3D, anime, cyberpunk, cinematic, creator, gaming or professional.
-      </div>
-
-      <div class="avatar-step">
-        <strong>03 · Generate</strong>
-        The selected external AI service processes the reference photo.
-      </div>
-
-      <div class="avatar-step">
-        <strong>04 · Download & share</strong>
-        Save the result and use it for your profile or social content.
       </div>
 
     </div>
 
-  </section>
+
+    <button
+      id="removeBtn"
+      class="btn btn-primary"
+      type="button"
+      disabled>
+      ✨ Remove Background with AI
+    </button>
 
 
-  <section class="section-block">
+    <div id="status"
+         class="status"
+         aria-live="polite">
 
-    <div class="section-heading">
-      <span class="eyebrow">TREND IDEAS</span>
-      <h2>Try These Avatar Looks</h2>
+      <div id="statusText">
+        Preparing AI...
+      </div>
+
+      <div class="progress">
+        <span></span>
+      </div>
+
     </div>
 
-    <div class="avatar-grid">
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🌌</div>
-        <h3>Cyber Neon</h3>
-        <p>
-          Futuristic city lights, glowing edges, neon colors and a premium
-          digital identity.
-        </p>
-      </article>
+    <!-- PREVIEWS -->
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🎬</div>
-        <h3>Cinematic</h3>
-        <p>
-          Dramatic lighting, film-style composition and a polished character
-          portrait.
-        </p>
-      </article>
+    <div class="preview-area">
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🎨</div>
-        <h3>Anime</h3>
-        <p>
-          Stylized illustrated avatar suitable for profile pictures and social
-          accounts.
-        </p>
-      </article>
+      <div class="preview-wrap">
 
-      <article class="avatar-card">
-        <div class="avatar-icon">🕹️</div>
-        <h3>Gaming</h3>
-        <p>
-          Futuristic gaming character styling for Discord, gaming profiles and
-          creator pages.
-        </p>
-      </article>
+        <div class="preview-label">
+          ORIGINAL
+        </div>
+
+        <div class="preview-box">
+          <img
+            id="originalPreview"
+            alt="Uploaded original photo preview"
+            class="hidden"
+          >
+
+          <span id="originalEmpty"
+                style="color:#7d89a9;">
+            Your photo will appear here
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="preview-wrap">
+
+        <div class="preview-label">
+          RESULT
+        </div>
+
+        <div class="preview-box"
+             id="resultBox">
+
+          <canvas
+            id="resultCanvas"
+            class="hidden">
+          </canvas>
+
+          <span id="resultEmpty"
+                style="color:#7d89a9;">
+            Your AI result will appear here
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="download-row">
+
+      <button
+        id="downloadPng"
+        class="btn btn-green"
+        type="button"
+        disabled>
+        ⬇️ Download PNG
+      </button>
+
+      <button
+        id="downloadJpg"
+        class="btn btn-yellow"
+        type="button"
+        disabled>
+        ⬇️ Download JPG
+      </button>
 
     </div>
 
   </section>
 
 
-  <section class="section-block">
-    <h2>More Free RacharlaGPT Trend Tools</h2>
+  <!-- AD -->
 
-    <div class="avatar-grid">
+  <div class="container ad-wrap">
 
-      <a class="avatar-card" href="image-tools.html">
-        <div class="avatar-icon">🖼️</div>
-        <h3>Image Tools</h3>
-        <p>Resize, compress and convert your images.</p>
+    <div class="ad-label">
+      Advertisement
+    </div>
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1188239058737040"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+  </div>
+
+
+  <!-- BENEFITS -->
+
+  <section class="container">
+
+    <div class="info-grid">
+
+      <article class="info-card">
+        <div class="icon">🧠</div>
+        <h3>AI Background Removal</h3>
+        <p>
+          The tool uses an image-segmentation model in the browser
+          to separate the foreground subject from the background.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon">📱</div>
+        <h3>Made for Mobile</h3>
+        <p>
+          Select photos and backgrounds directly from your Android
+          or iPhone gallery/file picker.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon">🔒</div>
+        <h3>Browser Processing</h3>
+        <p>
+          The background-removal workflow is designed to process
+          the image locally instead of sending it to an AI image API.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- SEO CONTENT -->
+
+  <section class="container content-section">
+
+    <h2>
+      Free AI Photo Background Remover
+    </h2>
+
+    <p>
+      Removing the background from a photo is useful for profile
+      pictures, product photography, social-media images, presentations,
+      online stores, resumes and creative projects.
+    </p>
+
+    <p>
+      RacharlaGPT Trend's AI Background Studio lets you start with
+      a normal photo and create a clean cutout. After the AI removes
+      the background, you can keep the transparent result or place
+      the subject on another background.
+    </p>
+
+
+    <h3>
+      How to remove a photo background
+    </h3>
+
+    <ol>
+      <li>Tap <strong>Upload your photo</strong>.</li>
+      <li>Choose an image from your phone or computer.</li>
+      <li>Tap <strong>Remove Background with AI</strong>.</li>
+      <li>Wait while the browser loads and runs the AI model.</li>
+      <li>Choose Transparent or a new background.</li>
+      <li>Download your finished PNG or JPG.</li>
+    </ol>
+
+
+    <h3>
+      Add your own photo background
+    </h3>
+
+    <p>
+      You are not limited to the built-in backgrounds. Tap
+      <strong>Upload My Background</strong> and select another image
+      from your device. The tool places the AI-isolated subject
+      over that background.
+    </p>
+
+
+    <h3>
+      What can you use it for?
+    </h3>
+
+    <ul>
+      <li>Profile pictures</li>
+      <li>Social-media photos</li>
+      <li>Resume and professional photos</li>
+      <li>Product photography</li>
+      <li>Online-store product images</li>
+      <li>Presentation graphics</li>
+      <li>Creative photo edits</li>
+      <li>Transparent PNG cutouts</li>
+      <li>Simple poster and thumbnail preparation</li>
+    </ul>
+
+
+    <h3>
+      Why the first AI run can take longer
+    </h3>
+
+    <p>
+      The browser needs to download the AI model files before it can
+      perform the first background-removal operation. The model can
+      then be cached by the browser, so later operations may be faster.
+      Actual processing speed depends on the phone or computer,
+      available memory, browser and image size.
+    </p>
+
+  </section>
+
+
+  <!-- SECOND AD -->
+
+  <div class="container ad-wrap">
+
+    <div class="ad-label">
+      Advertisement
+    </div>
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1188239058737040"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+  </div>
+
+
+  <!-- FAQ -->
+
+  <section class="container content-section">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+    <div class="faq">
+
+      <details>
+        <summary>
+          Is this AI background remover free?
+        </summary>
+
+        <p>
+          The RacharlaGPT Trend tool does not require a user account
+          or a paid AI API key. Browser processing uses the open-source
+          background-removal technology and requires your browser to
+          download the model files.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Do I need to create an account?
+        </summary>
+
+        <p>
+          No. There is no RacharlaGPT account or login requirement
+          for this tool.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Can I use my own background?
+        </summary>
+
+        <p>
+          Yes. Select "Upload My Background" and choose an image
+          from your phone or computer.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Can I download a transparent PNG?
+        </summary>
+
+        <p>
+          Yes. Select Transparent as the background and download
+          the result as PNG.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Does RacharlaGPT upload my photo?
+        </summary>
+
+        <p>
+          The background-removal processing is designed to happen
+          locally in your browser. The page does not send your photo
+          to a RacharlaGPT image-generation server for this operation.
+          Your browser does need to download the AI model files used
+          for processing.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Will every photo produce a perfect cutout?
+        </summary>
+
+        <p>
+          AI segmentation works best when the main subject is clearly
+          visible. Very fine hair, transparent objects, reflections,
+          smoke and complicated backgrounds can produce imperfect edges.
+        </p>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- RELATED TOOLS -->
+
+  <section class="container">
+
+    <h2>
+      More Free RacharlaGPT Trend Tools
+    </h2>
+
+    <div class="related">
+
+      <a href="image-tools.html"
+         data-ga-event="related_image_tools">
+
+        <strong>🖼️ Image Tools</strong>
+
+        <span>
+          Resize, compress and convert images.
+        </span>
+
       </a>
 
-      <a class="avatar-card" href="creator-tools.html">
-        <div class="avatar-icon">✍️</div>
-        <h3>Creator Tools</h3>
-        <p>Create captions, hashtags and social content ideas.</p>
+
+      <a href="creator-tools.html"
+         data-ga-event="related_creator_tools">
+
+        <strong>✨ Creator Tools</strong>
+
+        <span>
+          Explore more creative tools for social content.
+        </span>
+
       </a>
 
-      <a class="avatar-card" href="student-tools.html">
-        <div class="avatar-icon">🎓</div>
-        <h3>Student Tools</h3>
-        <p>Explore free learning and productivity utilities.</p>
+
+      <a href="student-tools.html"
+         data-ga-event="related_student_tools">
+
+        <strong>🎓 Student Tools</strong>
+
+        <span>
+          Explore useful student-focused tools.
+        </span>
+
       </a>
 
     </div>
+
   </section>
 
 </main>
 
 
-<footer class="site-footer">
+<footer>
+
   <div class="container">
+
     <p>
-      © 2026 RacharlaGPT Trend · ManaTechSaavy · Telangana, India
+      © <span id="year"></span> RacharlaGPT Trend.
+      Free creative tools for everyone.
     </p>
 
     <p>
-      <a href="about.html">About</a> ·
-      <a href="contact.html">Contact</a> ·
-      <a href="privacy.html">Privacy</a> ·
-      <a href="terms.html">Terms</a> ·
-      <a href="disclaimer.html">Disclaimer</a>
+      <a href="https://racharlagpt.in/">
+        RacharlaGPT.in
+      </a>
+      ·
+      <a href="privacy.html">
+        Privacy
+      </a>
+      ·
+      <a href="terms.html">
+        Terms
+      </a>
     </p>
+
   </div>
+
 </footer>
 
 
-<script>
-  document.querySelectorAll('[data-ga-event]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      if (typeof gtag === 'function') {
-        gtag('event', el.dataset.gaEvent, {
-          event_category: 'avatar_studio',
-          event_label: el.textContent.trim()
-        });
-      }
+<script type="module">
+
+  /*
+   * RacharlaGPT Trend
+   * AI Background Studio
+   *
+   * Browser-side background removal.
+   *
+   * No API key.
+   * No user login.
+   * No cloud image-generation API.
+   */
+
+  const photoInput =
+    document.getElementById("photoInput");
+
+  const backgroundInput =
+    document.getElementById("backgroundInput");
+
+  const photoDrop =
+    document.getElementById("photoDrop");
+
+  const originalPreview =
+    document.getElementById("originalPreview");
+
+  const originalEmpty =
+    document.getElementById("originalEmpty");
+
+  const resultCanvas =
+    document.getElementById("resultCanvas");
+
+  const resultEmpty =
+    document.getElementById("resultEmpty");
+
+  const removeBtn =
+    document.getElementById("removeBtn");
+
+  const downloadPng =
+    document.getElementById("downloadPng");
+
+  const downloadJpg =
+    document.getElementById("downloadJpg");
+
+  const status =
+    document.getElementById("status");
+
+  const statusText =
+    document.getElementById("statusText");
+
+  const customBackgroundName =
+    document.getElementById("customBackgroundName");
+
+  const ctx =
+    resultCanvas.getContext("2d", {
+      alpha: true
     });
-  });
+
+
+  let sourceFile = null;
+  let cutoutBlob = null;
+  let cutoutImage = null;
+  let customBackgroundImage = null;
+  let selectedBackground = "transparent";
+
+
+  function track(eventName, params = {}) {
+
+    if (typeof window.gtag === "function") {
+
+      window.gtag(
+        "event",
+        eventName,
+        params
+      );
+
+    }
+
+  }
+
+
+  function showStatus(message, isError = false) {
+
+    status.classList.add("show");
+
+    status.classList.toggle(
+      "error",
+      isError
+    );
+
+    statusText.textContent = message;
+
+  }
+
+
+  function hideStatus() {
+
+    status.classList.remove("show");
+
+  }
+
+
+  function loadImageFromBlob(blob) {
+
+    return new Promise((resolve, reject) => {
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const img =
+        new Image();
+
+      img.onload = () => {
+
+        URL.revokeObjectURL(url);
+
+        resolve(img);
+
+      };
+
+      img.onerror = () => {
+
+        URL.revokeObjectURL(url);
+
+        reject(
+          new Error(
+            "Could not read the image."
+          )
+        );
+
+      };
+
+      img.src = url;
+
+    });
+
+  }
+
+
+  function loadImageFromFile(file) {
+
+    return new Promise((resolve, reject) => {
+
+      const url =
+        URL.createObjectURL(file);
+
+      const img =
+        new Image();
+
+      img.onload = () => {
+
+        URL.revokeObjectURL(url);
+
+        resolve(img);
+
+      };
+
+      img.onerror = () => {
+
+        URL.revokeObjectURL(url);
+
+        reject(
+          new Error(
+            "Could not read this image."
+          )
+        );
+
+      };
+
+      img.src = url;
+
+    });
+
+  }
+
+
+  function fitCanvasToImage(img) {
+
+    const maxDimension = 2200;
+
+    let width = img.naturalWidth || img.width;
+    let height = img.naturalHeight || img.height;
+
+    if (!width || !height) {
+
+      throw new Error(
+        "Invalid image dimensions."
+      );
+
+    }
+
+    const scale =
+      Math.min(
+        1,
+        maxDimension /
+        Math.max(width, height)
+      );
+
+    width =
+      Math.max(
+        1,
+        Math.round(width * scale)
+      );
+
+    height =
+      Math.max(
+        1,
+        Math.round(height * scale)
+      );
+
+    resultCanvas.width = width;
+    resultCanvas.height = height;
+
+    return {
+      width,
+      height
+    };
+
+  }
+
+
+  function drawBackground(width, height) {
+
+    if (
+      selectedBackground === "transparent"
+    ) {
+
+      ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+      return;
+
+    }
+
+
+    if (
+      selectedBackground === "custom" &&
+      customBackgroundImage
+    ) {
+
+      drawCover(
+        ctx,
+        customBackgroundImage,
+        width,
+        height
+      );
+
+      return;
+
+    }
+
+
+    let gradient;
+
+
+    if (
+      selectedBackground === "white"
+    ) {
+
+      ctx.fillStyle = "#ffffff";
+
+    } else if (
+      selectedBackground === "black"
+    ) {
+
+      ctx.fillStyle = "#050505";
+
+    } else if (
+      selectedBackground === "blue"
+    ) {
+
+      gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          width,
+          height
+        );
+
+      gradient.addColorStop(
+        0,
+        "#0066ff"
+      );
+
+      gradient.addColorStop(
+        1,
+        "#00d9ff"
+      );
+
+      ctx.fillStyle = gradient;
+
+    } else if (
+      selectedBackground === "purple"
+    ) {
+
+      gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          width,
+          height
+        );
+
+      gradient.addColorStop(
+        0,
+        "#651fff"
+      );
+
+      gradient.addColorStop(
+        1,
+        "#ff3bd4"
+      );
+
+      ctx.fillStyle = gradient;
+
+    } else if (
+      selectedBackground === "sunset"
+    ) {
+
+      gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          width,
+          height
+        );
+
+      gradient.addColorStop(
+        0,
+        "#ff5f6d"
+      );
+
+      gradient.addColorStop(
+        1,
+        "#ffc371"
+      );
+
+      ctx.fillStyle = gradient;
+
+    } else if (
+      selectedBackground === "neon"
+    ) {
+
+      ctx.fillStyle = "#080018";
+
+      ctx.fillRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+      const g1 =
+        ctx.createRadialGradient(
+          width * .3,
+          height * .3,
+          0,
+          width * .3,
+          height * .3,
+          width * .6
+        );
+
+      g1.addColorStop(
+        0,
+        "rgba(0,246,255,.85)"
+      );
+
+      g1.addColorStop(
+        1,
+        "rgba(0,246,255,0)"
+      );
+
+      ctx.fillStyle = g1;
+
+      ctx.fillRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      const g2 =
+        ctx.createRadialGradient(
+          width * .75,
+          height * .65,
+          0,
+          width * .75,
+          height * .65,
+          width * .6
+        );
+
+      g2.addColorStop(
+        0,
+        "rgba(255,59,212,.8)"
+      );
+
+      g2.addColorStop(
+        1,
+        "rgba(255,59,212,0)"
+      );
+
+      ctx.fillStyle = g2;
+
+      ctx.fillRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+    } else if (
+      selectedBackground === "nature"
+    ) {
+
+      gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          width,
+          height
+        );
+
+      gradient.addColorStop(
+        0,
+        "#0b6623"
+      );
+
+      gradient.addColorStop(
+        1,
+        "#7ac943"
+      );
+
+      ctx.fillStyle = gradient;
+
+    } else if (
+      selectedBackground === "gold"
+    ) {
+
+      gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          width,
+          height
+        );
+
+      gradient.addColorStop(
+        0,
+        "#6c4d00"
+      );
+
+      gradient.addColorStop(
+        1,
+        "#ffe600"
+      );
+
+      ctx.fillStyle = gradient;
+
+    } else if (
+      selectedBackground === "cinema"
+    ) {
+
+      gradient =
+        ctx.createLinearGradient(
+          0,
+          0,
+          width,
+          height
+        );
+
+      gradient.addColorStop(
+        0,
+        "#080808"
+      );
+
+      gradient.addColorStop(
+        .5,
+        "#2b1a11"
+      );
+
+      gradient.addColorStop(
+        1,
+        "#6a3d20"
+      );
+
+      ctx.fillStyle = gradient;
+
+    } else {
+
+      ctx.fillStyle = "#111827";
+
+    }
+
+
+    ctx.fillRect(
+      0,
+      0,
+      width,
+      height
+    );
+
+  }
+
+
+  function drawCover(
+    context,
+    image,
+    canvasWidth,
+    canvasHeight
+  ) {
+
+    const iw =
+      image.naturalWidth ||
+      image.width;
+
+    const ih =
+      image.naturalHeight ||
+      image.height;
+
+    const scale =
+      Math.max(
+        canvasWidth / iw,
+        canvasHeight / ih
+      );
+
+    const width =
+      iw * scale;
+
+    const height =
+      ih * scale;
+
+    const x =
+      (canvasWidth - width) / 2;
+
+    const y =
+      (canvasHeight - height) / 2;
+
+    context.drawImage(
+      image,
+      x,
+      y,
+      width,
+      height
+    );
+
+  }
+
+
+  function drawSubject(
+    image,
+    width,
+    height
+  ) {
+
+    const margin =
+      Math.min(
+        width,
+        height
+      ) * .05;
+
+    const availableWidth =
+      width - margin * 2;
+
+    const availableHeight =
+      height - margin * 2;
+
+    const iw =
+      image.naturalWidth ||
+      image.width;
+
+    const ih =
+      image.naturalHeight ||
+      image.height;
+
+    const scale =
+      Math.min(
+        availableWidth / iw,
+        availableHeight / ih
+      );
+
+    const dw =
+      iw * scale;
+
+    const dh =
+      ih * scale;
+
+    const x =
+      (width - dw) / 2;
+
+    const y =
+      (height - dh) / 2;
+
+    ctx.drawImage(
+      image,
+      x,
+      y,
+      dw,
+      dh
+    );
+
+  }
+
+
+  function renderResult() {
+
+    if (!cutoutImage) {
+      return;
+    }
+
+    const dimensions =
+      fitCanvasToImage(
+        cutoutImage
+      );
+
+    const width =
+      dimensions.width;
+
+    const height =
+      dimensions.height;
+
+
+    drawBackground(
+      width,
+      height
+    );
+
+
+    drawSubject(
+      cutoutImage,
+      width,
+      height
+    );
+
+
+    resultCanvas.classList.remove(
+      "hidden"
+    );
+
+    resultEmpty.classList.add(
+      "hidden"
+    );
+
+    downloadPng.disabled = false;
+    downloadJpg.disabled = false;
+
+  }
+
+
+  function validateFile(file) {
+
+    if (!file) {
+      return false;
+    }
+
+    if (
+      !file.type.startsWith("image/")
+    ) {
+
+      showStatus(
+        "Please choose an image file.",
+        true
+      );
+
+      return false;
+
+    }
+
+
+    const maxMB = 15;
+
+    if (
+      file.size >
+      maxMB * 1024 * 1024
+    ) {
+
+      showStatus(
+        "Please choose an image smaller than 15 MB.",
+        true
+      );
+
+      return false;
+
+    }
+
+    return true;
+
+  }
+
+
+  async function handlePhoto(file) {
+
+    if (!validateFile(file)) {
+      return;
+    }
+
+
+    sourceFile = file;
+
+    cutoutBlob = null;
+    cutoutImage = null;
+
+
+    const url =
+      URL.createObjectURL(file);
+
+    originalPreview.src = url;
+
+    originalPreview.classList.remove(
+      "hidden"
+    );
+
+    originalEmpty.classList.add(
+      "hidden"
+    );
+
+
+    removeBtn.disabled = false;
+
+    downloadPng.disabled = true;
+    downloadJpg.disabled = true;
+
+    resultCanvas.classList.add(
+      "hidden"
+    );
+
+    resultEmpty.classList.remove(
+      "hidden"
+    );
+
+    hideStatus();
+
+
+    track(
+      "photo_upload",
+      {
+        tool_name:
+          "ai_background_studio",
+        file_type:
+          file.type
+      }
+    );
+
+  }
+
+
+  photoInput.addEventListener(
+    "change",
+    () => {
+
+      const file =
+        photoInput.files &&
+        photoInput.files[0];
+
+      if (file) {
+        handlePhoto(file);
+      }
+
+    }
+  );
+
+
+  photoDrop.addEventListener(
+    "dragover",
+    event => {
+
+      event.preventDefault();
+
+      photoDrop.classList.add(
+        "dragging"
+      );
+
+    }
+  );
+
+
+  photoDrop.addEventListener(
+    "dragleave",
+    () => {
+
+      photoDrop.classList.remove(
+        "dragging"
+      );
+
+    }
+  );
+
+
+  photoDrop.addEventListener(
+    "drop",
+    event => {
+
+      event.preventDefault();
+
+      photoDrop.classList.remove(
+        "dragging"
+      );
+
+      const file =
+        event.dataTransfer.files &&
+        event.dataTransfer.files[0];
+
+      if (file) {
+        handlePhoto(file);
+      }
+
+    }
+  );
+
+
+  backgroundInput.addEventListener(
+    "change",
+    async () => {
+
+      const file =
+        backgroundInput.files &&
+        backgroundInput.files[0];
+
+      if (!file) {
+        return;
+      }
+
+
+      if (!validateFile(file)) {
+        return;
+      }
+
+
+      try {
+
+        customBackgroundImage =
+          await loadImageFromFile(file);
+
+        selectedBackground =
+          "custom";
+
+
+        document
+          .querySelectorAll(".bg-btn")
+          .forEach(button => {
+            button.classList.remove(
+              "active"
+            );
+          });
+
+
+        customBackgroundName.textContent =
+          "Custom background: " +
+          file.name;
+
+
+        if (cutoutImage) {
+          renderResult();
+        }
+
+
+        track(
+          "custom_background_uploaded",
+          {
+            tool_name:
+              "ai_background_studio"
+          }
+        );
+
+      } catch (error) {
+
+        showStatus(
+          "Could not load the background image.",
+          true
+        );
+
+      }
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(".bg-btn")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          selectedBackground =
+            button.dataset.bg;
+
+
+          document
+            .querySelectorAll(".bg-btn")
+            .forEach(item => {
+              item.classList.remove(
+                "active"
+              );
+            });
+
+
+          button.classList.add(
+            "active"
+          );
+
+
+          if (cutoutImage) {
+            renderResult();
+          }
+
+
+          track(
+            "background_selected",
+            {
+              background:
+                selectedBackground,
+              tool_name:
+                "ai_background_studio"
+            }
+          );
+
+        }
+      );
+
+    });
+
+
+  removeBtn.addEventListener(
+    "click",
+    async () => {
+
+      if (!sourceFile) {
+        return;
+      }
+
+
+      removeBtn.disabled = true;
+
+      downloadPng.disabled = true;
+      downloadJpg.disabled = true;
+
+
+      showStatus(
+        "Loading the browser AI model. The first run can take longer..."
+      );
+
+
+      track(
+        "background_removal_started",
+        {
+          tool_name:
+            "ai_background_studio"
+        }
+      );
+
+
+      try {
+
+        /*
+         * Import only when the user starts the AI operation.
+         * This keeps the initial page lighter.
+         */
+
+        const module =
+          await import(
+            "https://esm.sh/@imgly/background-removal@1.7.0?bundle"
+          );
+
+
+        const removeBackground =
+          module.default;
+
+
+        showStatus(
+          "AI is removing the background. Please keep this page open..."
+        );
+
+
+        cutoutBlob =
+          await removeBackground(
+            sourceFile
+          );
+
+
+        if (!cutoutBlob) {
+
+          throw new Error(
+            "The AI did not return an image."
+          );
+
+        }
+
+
+        cutoutImage =
+          await loadImageFromBlob(
+            cutoutBlob
+          );
+
+
+        renderResult();
+
+
+        showStatus(
+          "✓ Background removed successfully. Choose a background or download your result."
+        );
+
+
+        track(
+          "background_removed",
+          {
+            tool_name:
+              "ai_background_studio"
+          }
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Background removal error:",
+          error
+        );
+
+
+        showStatus(
+          "The AI background removal could not finish on this device. Try a smaller photo or a current Chrome/Edge browser.",
+          true
+        );
+
+
+        track(
+          "tool_error",
+          {
+            tool_name:
+              "ai_background_studio",
+            error_type:
+              "background_removal_failed"
+          }
+        );
+
+      } finally {
+
+        removeBtn.disabled = false;
+
+      }
+
+    }
+  );
+
+
+  function downloadCanvas(
+    type,
+    filename
+  ) {
+
+    if (
+      !resultCanvas.width ||
+      !resultCanvas.height
+    ) {
+      return;
+    }
+
+
+    resultCanvas.toBlob(
+      blob => {
+
+        if (!blob) {
+
+          showStatus(
+            "Could not create the download.",
+            true
+          );
+
+          return;
+
+        }
+
+
+        const url =
+          URL.createObjectURL(blob);
+
+        const link =
+          document.createElement(
+            "a"
+          );
+
+        link.href = url;
+
+        link.download =
+          filename;
+
+        document.body.appendChild(
+          link
+        );
+
+        link.click();
+
+        link.remove();
+
+        setTimeout(
+          () => URL.revokeObjectURL(url),
+          1000
+        );
+
+
+        track(
+          "photo_download",
+          {
+            tool_name:
+              "ai_background_studio",
+            format:
+              type === "image/png"
+                ? "png"
+                : "jpg"
+          }
+        );
+
+      },
+      type,
+      type === "image/jpeg"
+        ? .94
+        : undefined
+    );
+
+  }
+
+
+  downloadPng.addEventListener(
+    "click",
+    () => {
+
+      downloadCanvas(
+        "image/png",
+        "racharlagpt-trend-background-removed.png"
+      );
+
+    }
+  );
+
+
+  downloadJpg.addEventListener(
+    "click",
+    () => {
+
+      downloadCanvas(
+        "image/jpeg",
+        "racharlagpt-trend-photo.jpg"
+      );
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(
+      "[data-ga-event]"
+    )
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          track(
+            link.dataset.gaEvent,
+            {
+              tool_name:
+                "ai_background_studio"
+            }
+          );
+
+        }
+      );
+
+    });
+
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+  track(
+    "ai_background_studio_view",
+    {
+      tool_name:
+        "ai_background_studio"
+    }
+  );
+
 </script>
 
 </body>
